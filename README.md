@@ -64,7 +64,8 @@ The system captures the incoming message via Webhook, checks if the client exist
 
 *(O sistema captura a mensagem via Webhook, verifica se o cliente existe no banco e cadastra novos leads instantaneamente. Também checa no Redis se um humano já está falando com esse lead, evitando que a IA atrapalhe.)*
 
-> `[COLOQUE A IMAGEM AQUI: Print dos primeiros nós do n8n, mostrando o Webhook, Filtro de Dados e o Baserow]`
+<img width="1403" height="418" alt="image" src="https://github.com/user-attachments/assets/d08339d7-c60a-464c-9dd2-02742429570b" />
+
 
 #### 2. Message Queue & Anti-Spam (Redis) / Fila de Mensagens
 
@@ -72,7 +73,8 @@ To prevent the AI from generating separate answers when a lead sends multiple sh
 
 *(Para evitar que a IA responda várias vezes quando o lead manda mensagens curtas (ex: "Oi", "Tudo bem?", "Preço?"), o Redis cria um buffer. O robô aguarda, junta tudo em um único contexto e só então processa.)*
 
-> `[COLOQUE A IMAGEM AQUI: Print da etapa de fila com Redis e Wait]`
+<img width="868" height="307" alt="image" src="https://github.com/user-attachments/assets/3013c668-377e-4e9d-a2ba-8f363babbcad" />
+
 
 #### 3. Multimodal Processing / Processamento Multimodal
 
@@ -80,7 +82,8 @@ A Switch node checks the media type. If it's audio, it downloads and uses Gemini
 
 *(Um nó Switch verifica o tipo de mídia. Se for áudio, baixa e usa o Gemini para transcrever. Se for imagem, o Gemini Vision analisa o conteúdo para a IA entender o contexto.)*
 
-> `[COLOQUE A IMAGEM AQUI: Print do Switch de áudio/texto/imagem e a transcrição no Gemini]`
+<img width="1056" height="393" alt="image" src="https://github.com/user-attachments/assets/d643db02-419e-4cf1-8188-a2ea76772ef5" />
+
 
 #### 4. AI Agent & RAG / Agente de IA e RAG
 
@@ -88,7 +91,8 @@ The core of the operation. The Agent accesses a Vector Database (Qdrant) contain
 
 *(O coração da operação. O Agente acessa um banco de dados vetorial (Qdrant) com os scripts e escopos da empresa. Ele formula respostas com links de portfólio e faz perguntas estratégicas para extrair orçamento, datas e público-alvo.)*
 
-> `[COLOQUE A IMAGEM AQUI: Print mostrando o Agente, Postgres Memory e Qdrant]`
+<img width="817" height="478" alt="image" src="https://github.com/user-attachments/assets/f006e4a0-c564-4296-a150-f5ff8b030556" />
+
 
 #### 5. Human Handoff & Omnichannel Management / Transbordo Humano (Chatwoot)
 
@@ -96,7 +100,8 @@ If the lead confirms the generated summary or asks something out of scope, the A
 
 *(Se o lead confirma o resumo gerado ou foge do escopo, a IA se pausa (via trava no Redis) e atribui a conversa ao Chatwoot. O Chatwoot permite escalar a operação dividindo o atendimento em times (ex: SDR, Suporte, Vendas), gerenciando múltiplas contas/caixas de entrada, e fornecendo uma interface limpa para os humanos assumirem o controle.)*
 
-> `[COLOQUE A IMAGEM AQUI: Print do final do fluxo no n8n indo pro Chatwoot]`
+<img width="595" height="296" alt="image" src="https://github.com/user-attachments/assets/4edb803d-df8c-4591-b1a6-0178d86671d3" />
+
 
 > `[COLOQUE A IMAGEM AQUI: Print da tela do próprio CHATWOOT, mostrando as caixas de entrada e times]`
 
