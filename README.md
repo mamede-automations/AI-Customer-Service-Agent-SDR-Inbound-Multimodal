@@ -54,6 +54,7 @@ Chat memory storage.
 
 *(Armazenamento da memória da conversa.)*
 
+
 ---
 
 ### ⚙️ Architecture & Workflow / Arquitetura e Fluxo
@@ -67,6 +68,7 @@ The system captures the incoming message via Webhook, checks if the client exist
 <img width="1403" height="418" alt="image" src="https://github.com/user-attachments/assets/d08339d7-c60a-464c-9dd2-02742429570b" />
 
 
+
 #### 2. Message Queue & Anti-Spam (Redis) / Fila de Mensagens
 
 To prevent the AI from generating separate answers when a lead sends multiple short messages (e.g., "Hi", "How are you?", "Price?"), Redis creates a buffer. The bot waits, groups everything into a single context, and then processes it.
@@ -74,6 +76,7 @@ To prevent the AI from generating separate answers when a lead sends multiple sh
 *(Para evitar que a IA responda várias vezes quando o lead manda mensagens curtas (ex: "Oi", "Tudo bem?", "Preço?"), o Redis cria um buffer. O robô aguarda, junta tudo em um único contexto e só então processa.)*
 
 <img width="868" height="307" alt="image" src="https://github.com/user-attachments/assets/3013c668-377e-4e9d-a2ba-8f363babbcad" />
+
 
 
 #### 3. Multimodal Processing / Processamento Multimodal
@@ -85,6 +88,7 @@ A Switch node checks the media type. If it's audio, it downloads and uses Gemini
 <img width="1056" height="393" alt="image" src="https://github.com/user-attachments/assets/d643db02-419e-4cf1-8188-a2ea76772ef5" />
 
 
+
 #### 4. AI Agent & RAG / Agente de IA e RAG
 
 The core of the operation. The Agent accesses a Vector Database (Qdrant) containing company scripts and project scopes. It crafts standard responses with portfolio links and asks strategic questions to extract budget, dates, and target audience.
@@ -92,6 +96,7 @@ The core of the operation. The Agent accesses a Vector Database (Qdrant) contain
 *(O coração da operação. O Agente acessa um banco de dados vetorial (Qdrant) com os scripts e escopos da empresa. Ele formula respostas com links de portfólio e faz perguntas estratégicas para extrair orçamento, datas e público-alvo.)*
 
 <img width="817" height="478" alt="image" src="https://github.com/user-attachments/assets/f006e4a0-c564-4296-a150-f5ff8b030556" />
+
 
 
 #### 5. Human Handoff & Omnichannel Management / Transbordo Humano (Chatwoot)
@@ -105,7 +110,9 @@ If the lead confirms the generated summary or asks something out of scope, the A
 
 > `[COLOQUE A IMAGEM AQUI: Print da tela do próprio CHATWOOT, mostrando as caixas de entrada e times]`
 
+
 ---
+
 
 ### 🚀 Roadmap / Próximas Implementações
 
