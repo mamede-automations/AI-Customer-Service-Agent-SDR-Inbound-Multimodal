@@ -69,17 +69,7 @@ The system captures the incoming message via Webhook, checks if the client exist
 
 
 
-#### 2. Message Queue & Anti-Spam (Redis) / Fila de Mensagens
-
-To prevent the AI from generating separate answers when a lead sends multiple short messages (e.g., "Hi", "How are you?", "Price?"), Redis creates a buffer. The bot waits, groups everything into a single context, and then processes it.
-
-*(Para evitar que a IA responda várias vezes quando o lead manda mensagens curtas (ex: "Oi", "Tudo bem?", "Preço?"), o Redis cria um buffer. O robô aguarda, junta tudo em um único contexto e só então processa.)*
-
-<img width="868" height="307" alt="image" src="https://github.com/user-attachments/assets/3013c668-377e-4e9d-a2ba-8f363babbcad" />
-
-
-
-#### 3. Multimodal Processing / Processamento Multimodal
+#### 2. Multimodal Processing / Processamento Multimodal
 
 A Switch node checks the media type. If it's audio, it downloads and uses Gemini to transcribe it. If it's an image, Gemini Vision analyzes the content so the AI understands the context.
 
@@ -87,6 +77,14 @@ A Switch node checks the media type. If it's audio, it downloads and uses Gemini
 
 <img width="1056" height="393" alt="image" src="https://github.com/user-attachments/assets/d643db02-419e-4cf1-8188-a2ea76772ef5" />
 
+
+#### 3. Message Queue & Anti-Spam (Redis) / Fila de Mensagens
+
+To prevent the AI from generating separate answers when a lead sends multiple short messages (e.g., "Hi", "How are you?", "Price?"), Redis creates a buffer. The bot waits, groups everything into a single context, and then processes it.
+
+*(Para evitar que a IA responda várias vezes quando o lead manda mensagens curtas (ex: "Oi", "Tudo bem?", "Preço?"), o Redis cria um buffer. O robô aguarda, junta tudo em um único contexto e só então processa.)*
+
+<img width="868" height="307" alt="image" src="https://github.com/user-attachments/assets/3013c668-377e-4e9d-a2ba-8f363babbcad" />
 
 
 #### 4. AI Agent & RAG / Agente de IA e RAG
